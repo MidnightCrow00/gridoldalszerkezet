@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+    
+}
+
+body {
+    background-color: rgb(165, 217, 238);
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+main{
+    margin: auto;
+}
+header, nav, article, aside, footer {
+    border: 1px solid gray;
+    padding: 10px;
+}
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+article>div{
+    border: 1px solid gray;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "h h h h h"
+        "n n n n n"
+        "b a a a j"
+        "f f f f f"
+    ;
+    gap: 10px;
+}
+
+header{
+    grid-area:h;
+}
+nav{
+    grid-area: n;
+}
+footer{
+    grid-area: f;
+}
+article{
+    grid-area: a;
+}
+aside#bal{
+    grid-area: b;
+}
+aside#jobb{
+    grid-area: j;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+}
+nav li {
+    text-align: center;
+    padding: 5px;
+}
+nav li a{
+    text-decoration: none;
+}
+nav li:hover{
+    background-color: blueviolet;
+}
+img{
+    width: 100%;
+}
+/*tablet nézet*/
+@media screen and (max-width: 700px) {
+    body {
+      background-color: rgb(144, 174, 238);
+      width: 100%;
+      font-size: 3vw;
+    }
+    main{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+            "h h"
+            "n n"
+            "a b"
+            "j j"
+            "f f"
+        ;
+    }
+    nav ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        list-style-type: none;
+    }
+    nav li {
+        text-align: center;
+        padding: 5px;
+    }
+    nav li a{
+        text-decoration: none;
+    }
+    nav li:hover{
+        background-color: blueviolet;
+    }
+    article{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0px;
+    }
+}
+
+/*mobil nézet*/
+@media screen and (max-width: 450px) {
+    body {
+      background-color: rgb(144, 174, 238);
+      width: 100%;
+      font-size: 5vw;
+    }
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "h"
+            "n"
+            "a"
+            "j"
+            "b"
+            "f"
+        ;
+    }
+    nav ul{
+        display: grid;
+        grid-template-columns: 1fr;
+        list-style-type: none;
+    }
+    nav li {
+        text-align: center;
+        padding: 5px;
+    }
+    nav li a{
+        text-decoration: none;
+    }
+    nav li:hover{
+        background-color: blueviolet;
+    }
+    article{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+}
